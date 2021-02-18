@@ -1,1 +1,1 @@
-# BD-simulation
+# Brownian Dynamics 
