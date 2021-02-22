@@ -482,10 +482,10 @@ def rep_potential(distance, params, tails=False, tailscom=False):
 
 #Probability of creation/annhiliation of a new particle from/to reservoir
 
-def create_montecarlo(d,d_patches_1,d_patches_2,theta_1,theta_2,params):
+def create_montecarlo(d,d_patches_1,d_patches_2,theta_1,theta_2,params,attraction = True):
     #By definition dimensionless
     L = params['boxlength']
-    beta = params['beta'] 
+    beta = params['beta']
     h = params['PlanckConstant']
     m = params['mass']
     Vo = params['surface potential']
@@ -496,18 +496,21 @@ def create_montecarlo(d,d_patches_1,d_patches_2,theta_1,theta_2,params):
     Lambda = h/np.sqrt(2*np.pi*m/beta)
 
     U_rep = np.sum(rep_potential(d,params))
-    U_att = np.sum(att_potential(d_patches_1,theta_1,params)+att_potential(d_patches_2,theta_2,params))
-    
-    E = U_rep+U_att-Vo
+    if attraction == False:
+         E = U_rep-Vo
+    else:
+        U_att = np.sum(att_potential(d_patches_1,theta_1,params)+att_potential(d_patches_2,theta_2,params))
+        E = U_rep+U_att-Vo
+        
     p =  (rho_res*A*Lambda/(N+1))*np.exp(-beta*E)
     p_create = p/(1+p)
 
     return p_create
 
-def destroy_montecarlo(d,d_patches_1,d_patches_2,theta_1,theta_2,params):
+def destroy_montecarlo(d,d_patches_1,d_patches_2,theta_1,theta_2,params,attraction = True):
      #By definition dimensionless
     L = params['boxlength']
-    beta = params['beta'] 
+    beta = params['beta']
     h = params['PlanckConstant']
     m = params['mass']
     Vo = params['surface potential']
@@ -518,12 +521,13 @@ def destroy_montecarlo(d,d_patches_1,d_patches_2,theta_1,theta_2,params):
     Lambda = h/np.sqrt(2*np.pi*m/beta)
 
     U_rep = np.sum(rep_potential(d,params))
-    U_att = np.sum(att_potential(d_patches_1,theta_1,params)+att_potential(d_patches_2,theta_2,params))
-    
-    E = (U_rep+U_att-Vo)
-    print('E',E)
+    if attraction == False:
+            E = U_rep-Vo
+    else:
+        U_att = np.sum(att_potential(d_patches_1,theta_1,params)+att_potential(d_patches_2,theta_2,params))
+        E = U_rep+U_att-Vo
+        
     p =  (rho_res*A*Lambda/(N))*np.exp(-beta*E)
-
     p_destroy = 1/(1+p)
 
     return p_destroy

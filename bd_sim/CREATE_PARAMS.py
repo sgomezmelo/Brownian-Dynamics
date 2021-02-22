@@ -7,7 +7,7 @@ def create_params(TEMP=293.15, VISC=1e-3,
                   PARTNUM=60, SIMSTEPS=100000,
                   SAVEINT=500, SAVE_ALL_DATA=False,
                   GRAPHICAL=False, TAIL=False, ONLY_STATISTICS=False, ASSEMBL_DETAILS=False, ONLY_TAIL_ANGLE=False,
-                  MAIN_PATH="DataAnalysis_Cluster/", SUB_PATH="Results/" , N_trials = 5):
+                  MAIN_PATH="DataAnalysis_Cluster/", SUB_PATH="Results/" , N_trials = 5, Vo = 0, rho = 10**23):
 
 
 
@@ -30,11 +30,11 @@ def create_params(TEMP=293.15, VISC=1e-3,
     ATTRACTIVE_ENERGY_STRENGTH = ATT * BOLTZMANN_CONSTANT * TEMPERATURE
     TAIL_REPULSIVE_ENERGY_PARAMETER = TREP * BOLTZMANN_CONSTANT * TEMPERATURE
     MASS = 8.573e-23  # Mass of SAS-6 in kg
-    V_s = 175e-3 #Surface potential difference in Volts
-    q = 4.2e-18  #Approx charge of the SAS-6 in C
-    c_res = 0.01 #Concentration of the reservoir in mol/m^3
-    Na = 6.022e+23 #Avogadros number
-    rho_r = c_res*Na  # Particle density/concentration
+    # V_s = 175e-3 #Surface potential difference in Volts
+    # q = 4.2e-18  #Approx charge of the SAS-6 in C
+    # c_res = 0.01 #Concentration of the reservoir in mol/m^3
+    # Na = 6.022e+23 #Avogadros number
+    # rho_r = c_res*Na  # Particle density/concentration
     N_m = 2000  # Number of time steps in which a particle creation event is attempted
     
     '''TUNE'''
@@ -91,8 +91,8 @@ def create_params(TEMP=293.15, VISC=1e-3,
     BETA_D = BETA * ENERGY_SCALE
     h_D = h/(ENERGY_SCALE*TIME_SCALE)
     MASS_D = MASS*LENGTH_SCALE**2/(ENERGY_SCALE**2*TIME_SCALE**2)
-    V_SURFACE_D = q*V_s/ENERGY_SCALE
-    RHO_RES_D  =  rho_r*LENGTH_SCALE**3
+    V_SURFACE_D = Vo/ENERGY_SCALE
+    RHO_RES_D  =  rho*LENGTH_SCALE**3
 
     DIFFUSION_COEFFICIENT_X_D = DIFFUSION_COEFFICIENT_X * (TIME_SCALE / (LENGTH_SCALE ** 2))
     DIFFUSION_COEFFICIENT_Y_D = DIFFUSION_COEFFICIENT_Y * (TIME_SCALE / (LENGTH_SCALE ** 2))
@@ -231,7 +231,7 @@ def create_params(TEMP=293.15, VISC=1e-3,
               'nparticles':PARTICLE_NUMBER,
               'PlanckConstant': h_D,
               'mass' : MASS_D,
-              'surface potential': V_SURFACE_D,
+              'surface potential':  V_SURFACE_D,
               'Reservoir concentration': RHO_RES_D,
               'Montecarlo step': N_m,
               'Trials' : N_trials
