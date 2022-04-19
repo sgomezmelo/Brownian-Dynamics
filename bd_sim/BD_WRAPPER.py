@@ -13,16 +13,16 @@ args = json.loads(data)
 
 n_trials = 1
 repulsive_energy = args['Repulsive Energy Strength'] #Repulsive energy parameter in k_BT
-index = int(args['Index'])
-file_name = str(args['Name'])
-atractive_energy = args['Attractive Energy Strength']
+index = int(args['Index']) #Index for labelling of several runs
+file_name = str(args['Name']) #Name for output files
+atractive_energy = args['Attractive Energy Strength'] #Attractive energy parameter in k_BT
 L = float(args['Boxlength']) #Length of the box side in m
 N_steps = int(args['Number of time steps'])
 initial_N = int(args['Initial Number of Particles']) #Initial number of particles
 N_MC = int(args['GCMC time step']) #Number of steps to attempt montecarlo
-V_surface = float(args['Surface Potential'])  #surface potential in kbT
-angle = float(args['Cutoff angle'])
-subpath = str(args['Subpath'])
+V_surface = float(args['Surface Potential'])  #Surface potential in kbT
+angle = float(args['Cutoff angle']) # Cutoff angle/pi
+subpath = str(args['Subpath'])#
 
 #@profile
 def bd(x, y, alpha, params, file_name, run=5):

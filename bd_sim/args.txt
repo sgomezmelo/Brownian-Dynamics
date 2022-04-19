@@ -7,5 +7,5 @@
 "Cutoff angle":0.3,
 "Initial Number of Particles":1,
 "Boxlength":170e-9, 
-"Subpath":"Results_Folder",
+"Subpath":"Results_Folder/",
 "Name":"Run_0"}
