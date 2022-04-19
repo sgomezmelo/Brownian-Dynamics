@@ -1,0 +1,11 @@
+{"Repulsive Energy Strength":5.0,
+"Attractive Energy Strength":10.0,
+"Index":1,
+"GCMC time step":1000,
+"Number of time steps":1000000,
+"Surface Potential":55.0,
+"Cutoff angle":0.3,
+"Initial Number of Particles":1,
+"Boxlength":170e-9, 
+"Subpath":"Results_Folder",
+"Name":"Run_0"}
