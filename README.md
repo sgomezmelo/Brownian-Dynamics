@@ -23,6 +23,4 @@ python3 BD_WRAPPER.py
 ```
 The results are saved on several files in the specified folder with the specified name, according to the "args.txt" file. The number of protein clusters with different protein numbers at several times are stored in the "closed" file in the case of rings and in the "open" file otherwise; each column represents a cluster size and each row represents a time. The total number of proteins is saved in "total_particle_number" file. The times in which the measurements are taken are stored in the "time" file. The files "part_pos_and_ori" and "patch_pos" track the coordinates of the particles and binding sites in time, respectively. The file "spheres" stores the position of the bead model in the global frame.
 
-Relevant parameters such as the strength or anisotropy of the interactions, attractive potential of the adsorbent surface, length of the simulation domain, or initial number of particles may also be specified in the "args.txt" file. Other parameters, such as the diffusivity of SAS-6 in the particle fixed frame, the temperature or the length scales of the potentials may be specified in the "CREATE_PARAMS.py" script. Keep in mind that the code is designed for a diagonal diffusion matrix. 
-
 ## Minimal Example
