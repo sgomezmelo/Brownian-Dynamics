@@ -8,6 +8,7 @@ The code in this repository implements a coupled Brownian Dynamics/Grand Canonic
 
 The routine employs the folowing libraries:
 
+- Python 3.0 or later
 - Numpy
 - NetworkX
 - JSON
@@ -15,8 +16,12 @@ The routine employs the folowing libraries:
 
 ## Getting Started
 
-The code runs according to the parameters specified on the "args.txt" file. Here the user can specify the number of time steps to compute, the name of the files on which the results are written, or the name of the folder in which they are saved. Users are welcome to modify these parameters as they see fit. To compute a single run of the code, simply run the "BD WRAPPER" python script. 
+The code runs according to the parameters specified on the "args.txt" file. Here the user can specify the number of time steps to compute, the name of the files on which the results are written, or the name of the folder in which they are saved. Users are welcome to modify these parameters as they see fit. To compute a single run of the code, simply run the "BD_WRAPPER.py" python script:
 
-Relevant parameters such as the strength or anisotropy of the interactions, attractive potential of the adsorbent surface, length of the simulation domain, or initial number of particles may also be specified in the "args.txt" file. Other parameters, such as the diffusivity of SAS-6 in the particle fixed frame, the temperature or the length scales of the potentials may be specified in the "CREATE_PARAMS.py" script. 
+```
+python3 BD_WRAPPER.py
+```
+
+Relevant parameters such as the strength or anisotropy of the interactions, attractive potential of the adsorbent surface, length of the simulation domain, or initial number of particles may also be specified in the "args.txt" file. Other parameters, such as the diffusivity of SAS-6 in the particle fixed frame, the temperature or the length scales of the potentials may be specified in the "CREATE_PARAMS.py" script. Keep in mind that the code is designed for a diagonal diffusion matrix. 
 
 ## Minimal Example
