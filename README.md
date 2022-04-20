@@ -13,4 +13,4 @@ The routine employs the folowing libraries:
 - JSON
 - Scipy
 
-## Minimal Example
+## Minimal Example
