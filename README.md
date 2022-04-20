@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The code in this repository implements a coupled Brownian Dynamics/Grand Canonical Monte Carlo (BD/GCMC) routine to model the self assembly of the Spindle Assembly Abnormal Protein 6 (SAS-6) into nonameric rings. The algorithm solves the Langevin equations of motion of suitably coarse grained particles on a 2D fluid in contact with a reservoir which allows for particle exchange, thus modelling adsorption via statistical simulation of GCMC. The repository also includes a file for the fitting of coagulation fragmentation equations (CF) in the reaction limited approximation to the simulated concentrations in time. This is the official repository of -.
+The code in this repository implements a coupled Brownian Dynamics/Grand Canonical Monte Carlo (BD/GCMC) routine to model the self assembly of the Spindle Assembly Abnormal Protein 6 (SAS-6) into nonameric rings. The algorithm solves the Langevin equations of motion of suitably coarse grained particles on a 2D fluid in contact with a reservoir which allows for particle exchange, thus modelling adsorption via statistical simulation of GCMC. The repository also includes a file for the fitting of coagulation fragmentation equations (CF) in the reaction limited approximation to the simulated concentrations in time. This is the official repository of the manuscript "Adsorption and self-assembly of SAS-6 rings on a surface: a grand canonical Brownian dynamics study".
 
 ## Libraries
 
@@ -14,7 +14,7 @@ The routine employs the folowing libraries:
 - JSON
 - Scipy
 
-## Getting Started
+## Setup
 
 The code runs according to the parameters specified on the "args.txt" file. Here the user can specify the number of time steps to compute, the name of the files on which the results are written, or the name of the folder in which they are saved. Users are welcome to modify these parameters as they see fit. To compute a single run of the code, simply run the "BD_WRAPPER.py" python script:
 
