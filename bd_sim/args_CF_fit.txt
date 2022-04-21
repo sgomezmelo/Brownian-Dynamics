@@ -1,0 +1,8 @@
+{"N max":10,
+"N min":8, "Results Folder":"DataAnalysis_Cluster/average_multiple_parameter/",
+"Total Number file":"MC_step_1000_Energy_ratio_2.0_cutoff_angle_0.3_Surface_Potential_55.0_average_total_number.csv",
+"Open concentrations file":"MC_step_1000_Energy_ratio_2.0_cutoff_angle_0.3_Surface_Potential_55.0_average_open.csv",
+"Closed concentrations file":"MC_step_1000_Energy_ratio_2.0_cutoff_angle_0.3_Surface_Potential_55.0_average_closed.csv",
+"Time file":"MC_step_1000_Energy_ratio_2.0_cutoff_angle_0.3_Surface_Potential_55.0_time.csv",
+"Parameters":"params.npz", 
+"Final File name":"results_cf_fitting"}
