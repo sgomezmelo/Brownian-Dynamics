@@ -5,4 +5,6 @@
 "Closed concentrations file":"MC_step_1000_Energy_ratio_2.0_cutoff_angle_0.3_Surface_Potential_55.0_average_closed.csv",
 "Time file":"MC_step_1000_Energy_ratio_2.0_cutoff_angle_0.3_Surface_Potential_55.0_time.csv",
 "Parameters":"params.npz", 
-"Final File name":"results_cf_fitting"}
+"Final File name":"results_cf_fitting",
+"Rate initialization": 7.0,
+"Adsorption initialization": [3.0,1.0]}

@@ -40,9 +40,8 @@ C = np.concatenate((openC,closedC), axis = 1).T #Single array of concentrations
 initial_particles = params['nparticles']
 k_i = 1.0/(MC*dt)
 No_parameters_to_fit = 2*(N_closed)+2
-k0 = 7.0*np.ones(No_parameters_to_fit)
-r0 = np.ones(2) 
-r0[0] = 3.0
+k0 = float(args['Rate initialization'])*np.ones(No_parameters_to_fit)
+r0 = np.array(args['Adsorption initialization'])
 
 print(k0)
 
