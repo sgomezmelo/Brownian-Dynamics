@@ -136,8 +136,10 @@ r_constants = np.exp(ads_result.x)
 y0 = [initial_particles]
 N_solution = solve_ivp(dNdt, (t[0],t[-1]), y0, method = 'RK45' , args = (r_constants,k_i), t_eval = t)
 np.savetxt(folder+name+'_adsorption_kinetics_solution.csv',N_solution.y,delimiter = ',')
+np.savez(folder+name+'_adsorption_constants',r_constants)
 print('Finished fitting adsorption parameters')
 
+#Now fit the assembly kinetics with the adsorption kinetics as input
 result = minimize(CostFunction, k0, args = (C, N, N_min_closed, t, k_i, r_constants), method = 'Nelder-Mead', options={'maxiter':1000})
 k = np.exp(-result.x)
 y0 = np.zeros(N+N_closed)
