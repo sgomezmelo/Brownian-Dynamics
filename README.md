@@ -1,5 +1,4 @@
-# Grand canonical Brownian dynamics simulations of adsorption and
-self-assembly of SAS-6 rings on a surface
+# Grand canonical Brownian dynamics simulations of adsorption and self-assembly of SAS-6 rings on a surface
 
 ## Introduction
 
